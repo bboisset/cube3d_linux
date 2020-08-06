@@ -43,9 +43,9 @@ int	cam_mall_err(t_map_config *config, t_data *data, int code)
 
 int	full_error_d(t_full_conf *full_conf, int type, int code)
 {
-	if (type > 0)
+	if (type > 0 && full_conf->config->small_res == 0)
 		free_gun(full_conf->data, full_conf->gun);
-	if (type > 2)
+	if (type > 2 && full_conf->config->small_res == 0)
 		free_minimap(full_conf->data, full_conf->minimap, 1);
 	code = full_conf->config->config_error <
 		0 ? full_conf->config->config_error : code;

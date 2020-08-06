@@ -65,8 +65,11 @@ int		exit_pr(t_full_conf *full_conf)
 {
 	free(full_conf->camera);
 	free_config(full_conf->config, full_conf->data);
-	free_minimap(full_conf->data, full_conf->minimap, 1);
-	free_gun(full_conf->data, full_conf->gun);
+	if (full_conf->config->small_res == 0)
+	{
+		free_minimap(full_conf->data, full_conf->minimap, 1);
+		free_gun(full_conf->data, full_conf->gun);
+	}
 	free_data(full_conf->data);
 	free(full_conf);
 	return (0);

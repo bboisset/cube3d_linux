@@ -102,5 +102,7 @@ int		assign_resolutions(char *str, t_map_config *config)
 		return (-6);
 	config->res.x = config->res.x > SCREEN_MAX_W ? SCREEN_MAX_W : config->res.x;
 	config->res.y = config->res.y > SCREEN_MAX_H ? SCREEN_MAX_H : config->res.y;
+	if (config->res.x < 320 || config->res.y < 320)
+		config->small_res = 1;
 	return ((config->res.x > 0 && config->res.y > 0) ? 0 : -7);
 }

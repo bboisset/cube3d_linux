@@ -64,6 +64,7 @@ t_map_config		*init_config(void)
 	new_config->save_img = 0;
 	new_config->step = -1;
 	new_config->player_count = 0;
+	new_config->small_res = 0;
 	new_config->temp_map = NULL;
 	new_config->sprt_lst = NULL;
 	return (new_config);

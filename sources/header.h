@@ -151,6 +151,7 @@ typedef struct				s_map_config
 	int						config_error;
 	int						step;
 	int						player_count;
+	int						small_res;
 }							t_map_config;
 
 typedef struct				s_display
