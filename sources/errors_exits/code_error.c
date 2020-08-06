@@ -18,6 +18,8 @@ static void	code_error_two(int code)
 		ft_putstr("Not Enough Memory Avalaible To Run / Gun Config is wrong\n");
 	else if (code == 11)
 		ft_putstr("Can't save bitmap\n");
+	else if (code == 12)
+		ft_putstr("Wrong map extension\n");
 }
 
 void		free_image(void *mlx_ptr, t_img_data *img_data)

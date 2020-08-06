@@ -12,7 +12,7 @@
 
 #include "header.h"
 
-int	read_argument(const char *argument, t_map_config *config)
+int			read_argument(const char *argument, t_map_config *config)
 {
 	if (ft_strncmp(argument, "--save", ft_strlen(argument)) == 0)
 	{
@@ -22,7 +22,21 @@ int	read_argument(const char *argument, t_map_config *config)
 	return (-1);
 }
 
-int	main(int argc, const char *argv[])
+static int	check_extension(const char *str, char *ext, t_map_config *config)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '.')
+		i++;
+	i++;
+	if ((ft_strncmp(str + i, ext, ft_strlen(str + i))) == 0)
+		return (1);
+	config->config_error = 12;
+	return (0);
+}
+
+int			main(int argc, const char *argv[])
 {
 	int					fd;
 	int					res;
@@ -36,7 +50,9 @@ int	main(int argc, const char *argv[])
 			return (map_error(config, 0));
 	if (argc == 2 || argc == 3)
 	{
-		if (!(fd = open(argv[1], O_RDONLY)))
+		if ((fd = open(argv[1], O_RDONLY)) == -1)
+			return (map_error(config, 1));
+		if (!check_extension(argv[1], "cub", config))
 			return (map_error(config, 1));
 		if ((res = read_file(fd, config)) == -1)
 			return (map_error(config, 1));
