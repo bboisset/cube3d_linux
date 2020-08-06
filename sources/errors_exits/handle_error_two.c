@@ -35,8 +35,11 @@ int	temp_map_switcher_error(char **map, int i, char **ptr_temp_map)
 
 int	cam_mall_err(t_map_config *config, t_data *data, int code)
 {
+	int	save_img;
+
+	save_img = config->save_img;
 	free_config(config, data);
-	free_data(data);
+	free_data(data, save_img);
 	code_error(code);
 	return (-1);
 }

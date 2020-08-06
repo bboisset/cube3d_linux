@@ -52,8 +52,11 @@ int			texture_error(t_map_config *config, t_data *data)
 int			full_error(t_map_config *config, t_data *data, t_display *display,
 	int code)
 {
+	int	save_img;
+
+	save_img = config->save_img;
 	free_config(config, data);
-	free_data(data);
+	free_data(data, save_img);
 	free(display);
 	code_error(code);
 	return (-1);

@@ -40,9 +40,10 @@ t_data					*init_data(t_map_config *config)
 		return (NULL);
 	if ((data->mlx_ptr = mlx_init()) == NULL)
 		return (NULL);
-	if ((data->mlx_win = mlx_new_window(data->mlx_ptr, config->res.x,
-		config->res.y, "Cub3D")) == NULL)
-		return (NULL);
+	if (config->save_img == 0)
+		if ((data->mlx_win = mlx_new_window(data->mlx_ptr, config->res.x,
+			config->res.y, "Cub3D")) == NULL)
+			return (NULL);
 	if ((data->mlx_img = mlx_new_image(data->mlx_ptr, config->res.x,
 		config->res.y)) == NULL)
 		return (NULL);

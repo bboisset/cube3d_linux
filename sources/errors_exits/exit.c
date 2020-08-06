@@ -52,9 +52,10 @@ void	free_minimap(t_data *data, t_minimap *minimap, int type)
 	free(minimap);
 }
 
-void	free_data(t_data *data)
+void	free_data(t_data *data, int save_img)
 {
-	mlx_destroy_window(data->mlx_ptr, data->mlx_win);
+	if (save_img == 0)
+		mlx_destroy_window(data->mlx_ptr, data->mlx_win);
 	free(data->data);
 	mlx_destroy_image(data->mlx_ptr, data->mlx_img);
 	free(data->mlx_ptr);
@@ -63,6 +64,9 @@ void	free_data(t_data *data)
 
 int		exit_pr(t_full_conf *full_conf)
 {
+	int	save_img;
+
+	save_img = full_conf->config->save_img;
 	free(full_conf->camera);
 	free_config(full_conf->config, full_conf->data);
 	if (full_conf->config->small_res == 0)
@@ -70,7 +74,7 @@ int		exit_pr(t_full_conf *full_conf)
 		free_minimap(full_conf->data, full_conf->minimap, 1);
 		free_gun(full_conf->data, full_conf->gun);
 	}
-	free_data(full_conf->data);
+	free_data(full_conf->data, save_img);
 	free(full_conf);
 	return (0);
 }

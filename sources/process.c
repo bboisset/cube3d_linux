@@ -26,8 +26,7 @@ static int	first_launch_end(t_full_conf *full_conf)
 		return (0);
 	}
 	else
-	{
-		
+	{	
 		if (full_conf->config->small_res == 0)
 			gun(full_conf, 0);
 		mlx_hook(full_conf->data->mlx_win, 2, 1L << 0, key_press, full_conf);

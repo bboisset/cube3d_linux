@@ -17,6 +17,7 @@ int			read_argument(const char *argument, t_map_config *config)
 	if (ft_strncmp(argument, "--save", ft_strlen(argument)) == 0)
 	{
 		config->save_img = 1;
+		config->small_res = 1;
 		return (0);
 	}
 	return (-1);
