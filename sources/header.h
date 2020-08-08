@@ -292,7 +292,7 @@ void						init_raycast(int x, t_raycast *param,
 
 int							main_error(int n);
 void						free_textures(t_map_config	*config, t_data *data);
-void						free_data(t_data *data);
+void						free_data(t_data *data, int save_img);
 void						free_image(void *mlx_ptr, t_img_data *img_data);
 int							texture_error(t_map_config *config, t_data *data);
 int							full_error_d(t_full_conf *full_conf,
@@ -339,4 +339,6 @@ int							char_is_sprite(char *str, int i, int map_y,
 int							inspect_line_end(char *str, t_map_config *config);
 void						char_is_player(t_map_config *config, char *str,
 	int i, int map_y);
+
+void						handle_max_res(t_map_config *config, void *mlx_ptr);
 #endif
