@@ -1,8 +1,8 @@
 NAME	=	Cub3D
 
-MLXFLAGS	=	-lmlx -lXext -lX11 -lm
-
 MLX		=	minilibx-linux
+
+MLXFLAGS	=	-L $(MLX)/ -lmlx -lXext -lX11 -lm
 
 LIBFT	=	libft
 
