@@ -37,7 +37,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include <unistd.h>
-# include <mlx.h>
+# include "../minilibx-linux/mlx.h"
 # include "../libft/libft.h"
 # include "../includes/Get-Next-Line/get_next_line.h"
 
