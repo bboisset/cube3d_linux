@@ -1,4 +1,4 @@
-NAME	=	Cub3D
+NAME	=	cub3D
 
 MLX		=	minilibx-linux
 
@@ -47,13 +47,13 @@ OBJSRCS			=	$(SRCS:.c=.o)
 OBJSRCSBONUS	=	$(SRCS_BONUS:.c=.o)
 
 $(NAME) : $(OBJSRCS) $(OBJSRCSBONUS)
-	@echo "\033[33m[Clean old Cub3D...]"
-	@rm -rf Cub3D
+	@echo "\033[33m[Clean old cub3D...]"
+	@rm -rf cub3D
 	@echo "\033[32m[Compile Libft...]"
 	@$(MAKE) -C $(LIBFT) 
 	@echo "\033[32m[Compile MLX...]"
 	@$(MAKE) -C $(MLX)
-	@echo "\033[32m[Compile Cub3D...]"
+	@echo "\033[32m[Compile cub3D...]"
 	@gcc  $(OBJSRCSBONUS) $(OBJSRCS) -I./sources/header.h -Wall -Wextra -Werror $(MLX)/libmlx.a $(MLXFLAGS)  $(LIBFT)/libft.a -o $(NAME)
 	@echo "\033[32m[Success !]"
 
