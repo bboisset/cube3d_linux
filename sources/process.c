@@ -19,6 +19,7 @@ static int	first_launch_end(t_full_conf *full_conf)
 			return (-1);
 	if (full_conf->config->save_img == 1)
 	{
+		game_loop(full_conf);
 		if ((create_bitmap(full_conf->config, full_conf->data->data) < 0))
 			code_error(11);
 		handle_exit(full_conf);
