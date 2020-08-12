@@ -14,7 +14,6 @@
 
 static int	first_launch_end(t_full_conf *full_conf)
 {
-	game_loop(full_conf);
 	if (full_conf->config->small_res == 0)
 		if (mimimap(full_conf) < 0)
 			return (-1);
@@ -26,13 +25,12 @@ static int	first_launch_end(t_full_conf *full_conf)
 		return (0);
 	}
 	else
-	{	
-		if (full_conf->config->small_res == 0)
-			gun(full_conf, 0);
+	{
 		mlx_hook(full_conf->data->mlx_win, 2, 1L << 0, key_press, full_conf);
 		mlx_hook(full_conf->data->mlx_win, 3, 1L << 1, key_realease, full_conf);
 		mlx_hook(full_conf->data->mlx_win, 17, 1l << 17,
 			handle_exit, full_conf);
+		mlx_loop_hook(full_conf->data->mlx_ptr, reload_scene, full_conf);
 		mlx_loop(full_conf->data->mlx_ptr);
 	}
 	return (0);
@@ -69,6 +67,12 @@ int			first_launch(t_map_config *config)
 
 void		game_loop(t_full_conf *full_conf)
 {
+	if (full_conf->data->loop_count > 0)
+	{
+		mlx_destroy_image(full_conf->data->mlx_ptr, full_conf->data->mlx_img);
+		full_conf->data->mlx_img = mlx_new_image(full_conf->data->mlx_ptr,
+			full_conf->config->res.x, full_conf->config->res.y);
+	}
 	floor_sky_cast(full_conf);
 	raycasting_loop(full_conf);
 	sprite_loop(full_conf);

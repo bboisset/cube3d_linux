@@ -48,5 +48,4 @@ void	sprite_in_front(t_full_conf *full_conf, t_sprite_list *temp_sprt)
 	{
 		play_sound("./ressources/sounds/barrel_explosion.mp3", 1, full_conf);
 	}
-	reload_scene(full_conf, 0);
 }

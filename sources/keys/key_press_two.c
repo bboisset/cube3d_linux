@@ -27,5 +27,5 @@ void	enable_minimap(t_full_conf *full_conf)
 	if (full_conf->config->minimap_on)
 		place_player(full_conf);
 	else
-		reload_scene(full_conf, 0);
+		reload_scene(full_conf);
 }

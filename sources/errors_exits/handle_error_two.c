@@ -21,18 +21,6 @@ int	map_error(t_map_config *config, int code)
 	return (-1);
 }
 
-int	temp_map_switcher_error(char **map, int i, char **ptr_temp_map)
-{
-	int j;
-
-	j = 0;
-	while (j < i - 1)
-		free(map[j++]);
-	free(map);
-	free(ptr_temp_map);
-	return (-1);
-}
-
 int	cam_mall_err(t_map_config *config, t_data *data, int code)
 {
 	int	save_img;

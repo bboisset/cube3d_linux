@@ -4,8 +4,8 @@ SO ./ressources/imgs/south.xpm
 WE ./ressources/imgs/west.xpm
 EA ./ressources/imgs/east.xpm
 S ./ressources/imgs/barrel.xpm
-F 62,198,247
-C 114,114,114
+C 62,198,247
+F 114,114,114
 111111
 100101
 102001

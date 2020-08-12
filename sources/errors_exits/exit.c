@@ -22,7 +22,7 @@ void	free_config(t_map_config *config, t_data *data)
 	if (config->step > 1)
 	{
 		if (config->step > 2)
-			while (i < config->map_w.x)
+			while (i < config->map_w.y)
 				free(config->map[i++]);
 		free(config->map);
 		if (config->step > 3)

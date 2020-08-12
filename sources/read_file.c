@@ -53,10 +53,10 @@ static int	element_hub_two(char *str, int line_n, int res,
 	else if (str[0] == 'W' && str[1] == 'E' &&
 		!config->textures->west_texture_path)
 		config->textures->west_texture_path = get_path(2, str, config);
-	else if (str[0] == 'F' && !config->sky_color.red)
-		res = assign_sky(str, config);
-	else if (str[0] == 'C' && !config->ground_color.red)
+	else if (str[0] == 'F' && !config->ground_color.red)
 		res = assign_ground(str, config);
+	else if (str[0] == 'C' && !config->sky_color.red)
+		res = assign_sky(str, config);
 	if (res < 0)
 		config->config_error = res;
 	if (config->config_error < 0)

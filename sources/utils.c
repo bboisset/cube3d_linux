@@ -27,7 +27,11 @@ int			ft_edit_atoi(const char *str, int start)
 			return (-1);
 	}
 	while (ft_isdigit(str[i]) && str[i] != '\0')
+	{
 		number = number * 10 + (str[i++] - '0');
+		if (number >= 429496729)
+			return (429496729);
+	}
 	return (number);
 }
 
@@ -96,14 +100,14 @@ int			get_post_wo_spaces(char *str, char *set, int max)
 static void	define_direction_two(char c, t_map_config *config,
 	t_display *camera)
 {
-	if (c == 'S')
+	if (c == 'E')
 	{
 		config->init_dir.x = 0;
 		config->init_dir.y = 1;
 		camera->fov.x = 0.66;
 		camera->fov.y = 0;
 	}
-	else if (c == 'E')
+	else if (c == 'S')
 	{
 		config->init_dir.x = 1;
 		config->init_dir.y = 0;
@@ -114,14 +118,14 @@ static void	define_direction_two(char c, t_map_config *config,
 
 void		define_direction(char c, t_map_config *config, t_display *camera)
 {
-	if (c == 'N')
+	if (c == 'W')
 	{
 		config->init_dir.x = 0;
 		config->init_dir.y = -1;
 		camera->fov.x = -0.66;
 		camera->fov.y = 0;
 	}
-	else if (c == 'W')
+	else if (c == 'N')
 	{
 		config->init_dir.x = -1;
 		config->init_dir.y = 0;

@@ -12,6 +12,14 @@
 
 #include "../header.h"
 
+int			handle_exit(t_full_conf *full_conf)
+{
+	system("killall afplay 2&>/dev/null >/dev/null\n");
+	exit_pr(full_conf);
+	exit(1);
+	return (0);
+}
+
 static void	code_error_two(int code)
 {
 	if (code == 10)

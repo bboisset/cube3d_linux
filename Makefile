@@ -54,7 +54,7 @@ $(NAME) : $(OBJSRCS) $(OBJSRCSBONUS)
 	@echo "\033[32m[Compile MLX...]"
 	@$(MAKE) -C $(MLX)
 	@echo "\033[32m[Compile Cub3D...]"
-	@gcc $(OBJSRCSBONUS) $(OBJSRCS) -I./sources/header.h -Wall -Wextra -Werror $(MLX)/libmlx.a $(MLXFLAGS)  $(LIBFT)/libft.a -o $(NAME)
+	@gcc -fsanitize=address  $(OBJSRCSBONUS) $(OBJSRCS) -I./sources/header.h -Wall -Wextra -Werror $(MLX)/libmlx.a $(MLXFLAGS)  $(LIBFT)/libft.a -o $(NAME)
 	@echo "\033[32m[Success !]"
 
 all : $(NAME)

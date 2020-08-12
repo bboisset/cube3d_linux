@@ -35,7 +35,8 @@ int			init_gun(t_full_conf *full_conf)
 		return (-3);
 	}
 	full_conf->gun->gun_pos = init_dimensions();
-	full_conf->gun->call_count = 0;
+	full_conf->gun->call_count = -10;
+	full_conf->gun->direction = 1;
 	full_conf->gun->ammo = 64;
 	return (0);
 }

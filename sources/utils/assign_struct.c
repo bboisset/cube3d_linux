@@ -114,4 +114,3 @@ void	handle_max_res(t_map_config *config, void *mlx_ptr)
 	config->res.x = config->res.x > max_width ? max_width : config->res.x;
 	config->res.y = config->res.y > max_height ? max_height : config->res.y;
 }
-
