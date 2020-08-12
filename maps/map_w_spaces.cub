@@ -7,10 +7,9 @@ WE ./ressources/imgs/west.xpm
 S ./ressources/imgs/barrel.xpm
 
 
-             F 62,198,247
+             C 62,198,247
 
-
-C 214,145,114
+F 214,145,114
 111111
 100101
 1020    01
