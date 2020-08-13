@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linux_header.h                                     :+:      :+:    :+:   */
+/*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bboisset <bboisset@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -269,7 +269,7 @@ void						draw_stripe(t_drw_spt *param,
 
 void						draw_vertical_line(t_dimension start_pos, int y2,
 	const int color, t_data *data);
-void						draw_circle(int x, int y, int f, t_img_data *img);
+void						draw_circle(int x, int y, int r, t_img_data *img);
 void						fill_img(int x, int y, int color, t_img_data *img);
 
 int							mimimap(t_full_conf *full_conf);
