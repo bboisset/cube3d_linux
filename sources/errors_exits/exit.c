@@ -21,14 +21,13 @@ void	free_config(t_map_config *config, t_data *data)
 	free_sprites(&config->sprt_lst);
 	if (config->step > 1)
 	{
-		if (config->step > 2)
-			while (i < config->map_w.y)
-				free(config->map[i++]);
+		while (i < config->map_w.y)
+			free(config->map[i++]);
 		free(config->map);
-		if (config->step > 3)
+		if (config->step > 2)
 			free(config->z_buffer);
 	}
-	if (config->step >= 0 && config->step <= 2)
+	if (config->step >= 0 && config->step <= 1)
 		ft_lstfree(&config->temp_map);
 	free(config);
 }
@@ -68,12 +67,12 @@ int		exit_pr(t_full_conf *full_conf)
 
 	save_img = full_conf->config->save_img;
 	free(full_conf->camera);
-	free_config(full_conf->config, full_conf->data);
 	if (full_conf->config->small_res == 0)
 	{
 		free_minimap(full_conf->data, full_conf->minimap, 1);
 		free_gun(full_conf->data, full_conf->gun);
 	}
+	free_config(full_conf->config, full_conf->data);	
 	free_data(full_conf->data, save_img);
 	free(full_conf);
 	return (0);

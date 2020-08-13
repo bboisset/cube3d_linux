@@ -58,6 +58,5 @@ int			read_map(char *str, t_map_config *config)
 	if ((create_map(config) == -1))
 		return (-1);
 	config->step++;
-	config->step++;
 	return (0);
 }
