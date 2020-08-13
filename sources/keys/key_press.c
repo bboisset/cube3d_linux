@@ -26,6 +26,10 @@ void	handle_move(t_full_conf *full_conf)
 		handle_cam_right(full_conf);
 	if (full_conf->key.arrow_l_active == 1)
 		handle_cam_left(full_conf);
+	if (fmod(full_conf->camera->pos.y, 1) == 0)
+		full_conf->camera->pos.y += 0.01;
+	if (fmod(full_conf->camera->pos.x, 1) == 0)
+		full_conf->camera->pos.x += 0.01;
 }
 
 int		is_moving(t_full_conf *full_conf)
