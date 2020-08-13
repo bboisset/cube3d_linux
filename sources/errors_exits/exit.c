@@ -22,7 +22,7 @@ void	free_config(t_map_config *config, t_data *data)
 	if (config->step > 1)
 	{
 		while (i < config->map_w.y)
-			free(config->map[i++]);	
+			free(config->map[i++]);
 		if (config->step > 2)
 			free(config->z_buffer);
 	}
@@ -73,7 +73,7 @@ int		exit_pr(t_full_conf *full_conf)
 		free_minimap(full_conf->data, full_conf->minimap, 1);
 		free_gun(full_conf->data, full_conf->gun);
 	}
-	free_config(full_conf->config, full_conf->data);	
+	free_config(full_conf->config, full_conf->data);
 	free_data(full_conf->data, save_img);
 	free(full_conf);
 	return (0);
