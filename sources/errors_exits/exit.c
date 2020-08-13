@@ -22,11 +22,12 @@ void	free_config(t_map_config *config, t_data *data)
 	if (config->step > 1)
 	{
 		while (i < config->map_w.y)
-			free(config->map[i++]);
-		free(config->map);
+			free(config->map[i++]);	
 		if (config->step > 2)
 			free(config->z_buffer);
 	}
+	if (config->step >= 0)
+		free(config->map);
 	if (config->step >= 0 && config->step <= 1)
 		ft_lstfree(&config->temp_map);
 	free(config);
