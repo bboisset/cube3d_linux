@@ -25,8 +25,8 @@ int			char_is_sprite(char *str, int i, int map_y, t_map_config *config)
 {
 	t_sprite_list	*new_sprt_lst;
 
-	if (!(new_sprt_lst = ft_sprt_lst_nw(get_post_wo_spaces(str, "2", i),
-		map_y)))
+	if (!(new_sprt_lst = ft_sprt_lst_nw(map_y,
+		get_post_wo_spaces(str, "2", i))))
 		return (-3);
 	ft_sprt_lst_back(&config->sprt_lst, new_sprt_lst);
 	i++;
