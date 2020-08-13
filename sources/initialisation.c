@@ -29,6 +29,10 @@ static t_active_action	init_active_key(void)
 
 	pressed_key.down_active = 0;
 	pressed_key.up_active = 0;
+	pressed_key.right_active = 0;
+	pressed_key.left_active = 0;
+	pressed_key.arrow_l_active = 0;
+	pressed_key.arrow_r_active = 0;
 	return (pressed_key);
 }
 
